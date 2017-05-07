@@ -1,0 +1,44 @@
+<!-- Movie Details page -->
+<div class="row">
+    <div class="col">
+        <ul class="thumbnails">
+            <div ng-controller="MovieDetailController">
+                <div class="col-md-4">
+
+                    <img ng-src="https://image.tmdb.org/t/p/w185{{movieDetails.poster}}"/>
+                </div>
+                <div class="titleMovie">
+                    <h2>{{movieDetails.title}}({{movieDetails.date}})</h2>
+                </div>
+                <div class="starRating">
+                    <span ng-repeat="i in getNumber(ratingFullStar) track by $index" class="ratingText">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAQ5QTFRFAAAACAgACwsAR0cAWloADAwABAQAAwMAHx8AGxsAoqIAfX0AAAAABQUABQUAAAAASkoAS0sAAAAAmpoAm5sAAAAAAAAAAAAAAAAAMjIAAAAAAAAAAAAAAAAABwcASEgAY2MAZWUAjIwAjIwAZGQAYWEAR0cABwcABQUAaGgAaGgABgYACAgAZWUAZmYACQkAAAAAcXEAcHAAAAAAi4sAiYkAAAAAGBgAt7cAc3MAdXUAtLQAFBQAMTEAiIgASkoAAAAATEwAiIgALy8AAAAACQkAFRUAAAAAFhYACQkAAAAA0tIA9/cA29sA+voA/PwA//8A+fkA2NgA2dkA+PgA9vYA/v4A2toA3NwA////eWOdOQAAAEt0Uk5TAAAAAAAAAAAAAAAAD1xeB7CyLefoLgEDBXgGBAIXha20vunovbKpgkrY2k0wwMEyJNTTHdrYG0n31tf1RYH3mSKd+HwJkGAIZY8Yole8QwAAAAFiS0dEWZqy9BgAAAAJcEhZcwAAAEgAAABIAEbJaz4AAACkSURBVBjTY2DAAXh4UPmMvHyMKAL8AoL8yHwmIWERUSYoR0xcXIJf0ttbUkpaRkYMKCArJ6+gqOTjo6yiqqYuCxSQ0dD09fMPCPAP9NXSlgHpYdbRDQoAgmA9fRaIKawGhoEBASFGBqxQY9mMTQJCQ8NMzdihAhzmFuGWVhHWNpxQAS5bO3sHA0cnZ26ogIurmzuQ9PCEOVZKFuQeBhkvCWzeBgCW9xXDJTTdsQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNC0xMS0xOVQxMzo0MjowNiswMjowMJOwYfoAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTQtMTEtMTlUMTM6NDA6MTUrMDI6MDAbWhN4AAAAAElFTkSuQmCC"/>
+                    </span>
+                    <span ng-repeat="i in getNumber(ratingHalfStar) track by $index" class="ratingText">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVlQTFRFAAAAFBQUCgoKf39/fX19CQkAgoKCREQAycnJXV1dCwsAjIyMPz8/AQEAFxcAioqKcHAAt7e3cXFxbGxsgICAFBQUFhYWCAgIJiYmAAAAEhIITk5Mx8fKEBAAT08IgoJ4kZGTAAAAAAAAAAAAOTkAnJydDQ0NcXFxgYGBAAAACAgASkoAZWUAaGgAkpIAysrLs7OzsrKypKSkg4ODfn5+AAAABwcAa2sAtbW1g4ODcXFxCQkAZ2cAs7Ozf39/AAAAb28At7e3b29vAAAAiIgAw8PDbm5uEhIAs7MAbW0Empqa2dnZiIiILy8AiooATk4AAAAAfHx8pqamxMTElpaWCgoAGBgAAAAAYGBgioqKhISEeXl5AAAAbm5ufn5+gICAjY0HpaWds7MFtraw3d0A+fkA//8Au7sFurq0/////Pz87u7u2toA7e3t/PwAubkFubm03t4A8PDwFuArSAAAAGB0Uk5TAAAAAAAAAAAAAAAAAAAAAAAAAAAAExNiYgeysgcu6ekuAQQFdnYEAQEWgaiwu+bmu7CogRYCTNraTAIxwcExJNTUJBvZ2RtF9tXV9kV8+J0iIp34fI5kCAhkjgcXARcFQMGH6wAAAAFiS0dEabxrxLQAAAAJcEhZcwAAAEgAAABIAEbJaz4AAACrSURBVBjTY2DADhhFxRhRBJjEJRiYkQUkpaRlWJD4rLJy8gpsUI6ioqKSskpCoqqymqK6BlCfppa2jq5eUrK+gaGRsQlQwNTMPCU1LT0jMyvbwtIKZDK7tU0OSCDX1o6DE2wKl71DHlDA0YmbB2Isr7NLWn5BpqsbzCV87h6Fnl5F3j78UAEBXz//gMCg4BBBqBLJ0LBwBqGIyKhoqIByjCKQFI6NixfB4m8APOMeN83V9SYAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMTEtMTlUMTM6NDI6MDYrMDI6MDCTsGH6AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTExLTE0VDE2OjUxOjE4KzAyOjAwQKQ3DAAAAABJRU5ErkJggg=="/>
+                    </span>
+                    <span ng-repeat="i in getNumber(ratingEmptyStar) track by $index" class="ratingText">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAJiS0dEAP+Hj8y/AAAACXBIWXMAAABIAAAASABGyWs+AAABW0lEQVQoz4WRSyuEcRjFf///e5lmTCTTDGVCpl7XXDIzxdbKJQt2WE4psrDCF/AJlBIryc7CFxiKjY3MuMYkRRmXEnNr8v4tNM27IGd1nuc5PZ3TgX8gnEMYqoD3Y8dOlmkUA21UGzMI/y6wuTStCWvi2uX8qpepSZM1EJXizDJPHYIIQuRkAiGP5MhwX62kbmjvUtjK7sSrbCUiqIAx39xS45Ke+vYZP6w93SdV9i13e1VcFU86ZJ6rDv3jMasRAwnMBezAHevXN1u5Zw9AkA2i3Qvxc1XCuVrYj/bGaSgZ8TFIa2g5mVdKKZVXS4nW0CD+cooXPpEFn+kiA1TgM8h9kHbGrMTTYQUv2L4QYrIlFAy06Q8/Fw0gQozUtHtgdzM+e7Vz69W60qn+g08eS12E+XK7V/ST1I43L8m4G6eKbdlFvXBcEkTApLqQVuoU6EFIzc8rRWdpf+IbSYh1dXSAOMsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMTEtMTlUMTM6NDI6MDYrMDI6MDCTsGH6AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTExLTE0VDE2OjQyOjU3KzAyOjAwGB8t3AAAAABJRU5ErkJggg=="/>
+                    </span>
+                    <label class="ratingText">{{voteRate}}/10</label>
+                    <label class="ratingText">(View Count - {{movieDetails.viewCount}})</label>
+                </div>
+                <div class="panel panel-default overview-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <label>Overview</label>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <span>{{movieDetails.synopsis}}</span>
+                    </div>
+                </div>
+                <div class="buttonsPanel">
+                    <a class="btn btn-large btn-primary playMovie" ng-href = '#/movies/FindSubs/{{movieDetails.imdbId}}'>Play Movie</a>
+                    <!--<button class="btn btn-large btn-primary playMovie" onclick = "window.location.href='#/movies/movieTrailer/{{movieDetails.trailerURL}}'" >Watch Trailer</button>-->
+                    <a class="btn btn-large btn-primary watchTrailer" ng-href = '#/movies/movieTrailer/{{movieDetails.trailerURL}}' >Watch Trailer</a>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>

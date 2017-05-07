@@ -1,0 +1,227 @@
+
+.main-content {
+    padding: 40px 15px;
+    text-align: center;
+}
+/** Header  */
+.header {
+    color: #ffffff;
+    display: block;
+    height: 3em;
+}
+.gradient {
+
+    background: -webkit-linear-gradient(left top, #ffffff , #3399ff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #ffffff, #3399ff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #ffffff, #3399ff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, #ffffff , #3399ff); /* Standard syntax (must be last) */
+
+}
+.vitabox-title{
+    font-weight: bold ;
+    text-align: left;
+    padding-left: 1em;
+    font-size: 2em;
+    display: inline;
+}
+/** Clock CSS */
+
+
+
+
+.clock {
+    margin: 0 auto;
+    color: #fff;
+    text-shadow: 0 0 0.5em #00c6ff;
+    float: right;
+    margin-right: 2em;
+
+}
+
+#clock-date {
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    text-align: center;
+    text-shadow: 0 0 0.3em #00c6ff;
+}
+
+.clock ul {
+    margin: 0 auto;
+    padding: 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.clock ul > li {
+    display: inline;
+    font-size: 2em;
+    text-align: center;
+    font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 0.5em #00c6ff;
+}
+
+.clock-point {
+    position: relative;
+    -moz-animation: clock-move 1s ease infinite;
+    -webkit-animation: clock-move 1s ease infinite;
+    animation: clock-move 1s ease infinite;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+/* Simple Animation - Clock*/
+@-webkit-keyframes clock-move {
+    0% {opacity: 1.0;
+        text-shadow: 0 0 2em #00c6ff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 2em #00c6ff;
+    }
+}
+
+@-moz-keyframes clock-move {
+    0% {
+        opacity: 1.0;
+        text-shadow: 0 0 2em #00c6ff;
+    }
+
+    50% {
+        opacity: 0;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1.0;
+        text-shadow: 0 0 2em #00c6ff;
+    }
+}
+
+
+/* Left Navigation*/
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+    .sidebar-nav .navbar .navbar-collapse {
+        padding: 0;
+        max-height: none;
+    }
+    .sidebar-nav .navbar ul {
+        float: none;
+    }
+    .sidebar-nav .navbar ul:not {
+        display: block;
+    }
+    .sidebar-nav .navbar li {
+        float: none;
+        display: block;
+    }
+    .sidebar-nav .navbar li a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+/* Main Content */
+/** Footer */
+.copyright {
+    text-align: center;
+}
+
+/* Movies Grid */
+.border-movies {
+    border: none;
+}
+
+/* Movie Overview panel */
+.overview-panel {
+    width: 50%;
+    margin-left: 33%;
+    margin-top: 4%;
+}
+
+.ratingText {
+    float: left;
+}
+
+.titleMovie {
+    text-align: left;
+}
+
+.titleTrailer {
+    text-align: center;
+}
+
+/* Play and Watch Buttons */
+
+.playMovie {
+    width: 15%;
+    height: 5em;
+    margin-left: 20%;
+    float: left;
+    line-height: 400%;
+}
+
+.watchTrailer {
+    width: 15%;
+    height: 5em;
+    margin-left: 10%;
+    float: left;
+    line-height: 400%;
+}
+
+.buttonsPanel {
+    margin-top: 10%;
+}
+
+/* Hide/Show navigation links */
+.mainNav {
+    display: block;
+}
+
+.allMovieNav {
+    display: none;
+}
+
+/* Bootstrap */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* Carousel movie buttons(Lazy loading) */
+.btnNextPage {
+    margin-left: 10%;
+    width: 30%;
+}
+
+.btnPreviousPage {
+    width: 30%;
+}
+
+.pageNumbering {
+    margin-left: 10%;
+}
+
+.movieBtnPanel {
+    margin-left: 25%;
+    margin-top: 10%;
+}
+
+/* Carousel positioning */
+.carousel {
+    /*height: 390px;*/
+    height: 128%;
+}
+.carousel-indicators {
+    height: 0%;
+}
+.carousel-indicators li {
+    background: #ccc;
+}
+.carousel-indicators .active {
+    background: #666;
+}

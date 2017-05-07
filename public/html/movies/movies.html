@@ -1,0 +1,36 @@
+<!-- Movies page -->
+<!--<div class="row">-->
+    <!--<div class="col">-->
+        <!--<ul class="thumbnails list-unstyled border-movies">-->
+            <!--<div ng-controller="MovieController">-->
+                <!--<li class="col-md-4 row" ng-repeat="movie in movielist" >-->
+                    <!--<a class="btn-link thumbnail border-movies" ng-href='#/movies/movieDetail/{{movie.id}}'>-->
+                        <!--<img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster}}"/>-->
+                        <!--<span>{{movie.title}}</span>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</div>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+<div ng-controller="MovieController">
+    <div style="height: 305px">
+        <carousel interval="myInterval">
+            <slide ng-repeat="movie in movielist" active="slide.active" class="slideDots">
+                <h1>{{movie.title}}</h1>
+                <a class="btn-link thumbnail border-movies" ng-href='#/movies/movieDetail/{{movie.id}}'>
+                    <img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster}}" style="margin:auto;">
+                    <!--<div class="carousel-caption">-->
+                    <!--</div>-->
+                </a>
+            </slide>
+        </carousel>
+    </div>
+    <div class="row">
+        <div class="col-md-6 movieBtnPanel">
+            <button type="button" class="btn btn-info btnPreviousPage" ng-click="previousPage()">Previous Page</button>
+            <span class="pageNumbering">{{page}}/{{allPages}}</span>
+            <button type="button" class="btn btn-info btnNextPage" ng-click="nextPage()">Next Page</button>
+        </div>
+    </div>
+</div>

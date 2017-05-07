@@ -1,0 +1,2 @@
+# --- !Ups
+alter TABLE movie

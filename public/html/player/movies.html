@@ -1,0 +1,15 @@
+<!-- Movies page -->
+<div class="row">
+    <div class="col">
+        <ul class="thumbnails list-unstyled border-movies">
+            <div ng-controller="MovieController">
+                <li class="col-md-4 row" ng-repeat="movie in movielist" >
+                    <a class="btn-link thumbnail border-movies" ng-href='#/movies/movieDetail/{{movie.id}}'>
+                        <img ng-src="https://image.tmdb.org/t/p/w185{{movie.poster}}"/>
+                        <span>{{movie.title}}</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>

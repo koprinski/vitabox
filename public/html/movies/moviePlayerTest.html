@@ -1,0 +1,21 @@
+<!-- Movie Player page -->
+<div class="movieTitle">
+    <h2>{{movieInfo.title}}</h2>
+</div>
+<div id="video-player">
+    <video id="video-content" class="video-js vjs-default-skin" controls preload="none" width="640" height="264"
+           poster="{{videoplayer.poster}}"
+           data-setup="{}">
+        <source src="{{videoplayer.mp4Url}}" type='video/mp4'/>
+        <source src="{{videoplayer.oggUrl}}" type='video/ogg'/>
+        <source src="{{videoplayer.webmUrl}}" type='video/webm'/>
+        <track kind="captions" src="{{videoplayer.captionsUrl}}" srclang="{{captionLang}}"
+               label="{{videoplayer.captionsLabel}}"></track>
+        <!-- Tracks need an ending tag thanks to IE9 -->
+        <track kind="subtitles" src="{{videoplayer.subsUrl}}" srclang="{{subsLang}}"
+               label="{{videoplayer.subsLabel}}"></track>
+        <!-- Tracks need an ending tag thanks to IE9 -->
+        <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that
+            <a href="http://caniuse.com/#feat=video" target="_blank">supports HTML5 video</a></p>
+    </video>
+</div>

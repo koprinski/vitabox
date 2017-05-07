@@ -1,0 +1,61 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET        /                                                               @controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+#GET        /assets/*file                                  @controllers.Assets.at(path="/public", file)
+#Static resources
+GET        /main.html                                                  controllers.Assets.at(path="/public/html", file="main.html")
+GET        /public/stylesheets/main.css                                controllers.Assets.at(path="/public/stylesheets", file="main.css")
+GET        /public/javascripts/jquery-1.11.1.js                        controllers.Assets.at(path="/public/javascripts", file="jquery-1.11.1.js")
+GET        /public/bootstrap/css/bootstrap.min.css                     controllers.Assets.at(path="/public/bootstrap/css", file="bootstrap.min.css")
+GET        /public/bootstrap/js/bootstrap.min.js                       controllers.Assets.at(path="/public/bootstrap/js", file="bootstrap.min.js")
+GET        /public/bootstrap/js/ui-bootstrap-tpls-0.12.1.min.js        controllers.Assets.at(path="/public/bootstrap/js", file="ui-bootstrap-tpls-0.12.1.min.js")
+GET        /public/bootstrap/fonts/glyphicons-halflings-regular.woff   controllers.Assets.at(path="/public/bootstrap/fonts", file="glyphicons-halflings-regular.woff")
+GET        /public/angular/angular.min.js                              controllers.Assets.at(path="/public/angular", file="angular.min.js")
+GET        /public/angular/angular.min.js.map                          controllers.Assets.at(path="/public/angular", file="angular.min.js.map")
+GET        /public/angular/angular-route.js                            controllers.Assets.at(path="/public/angular", file="angular-route.js")
+GET        /public/javascripts/clock.js                                controllers.Assets.at(path="/public/javascripts", file="clock.js")
+GET        /public/angular/controllers.js                              controllers.Assets.at(path="/public/angular", file="controllers.js")
+
+
+#Navigation
+GET        /navigation/mainNavigation                                      controllers.Navigation.mainNavigation()
+GET        /navigation/allMoviesNavigation                                 controllers.AllMoviesNavigation.allMoviesNavigation()
+GET        /navigation/allRadioNavigation                                  controllers.AllRadioNavigation.allRadioNavigation()
+#Templates
+GET        /home.html                                                      controllers.Assets.at(path="/public/html", file="home.html")
+GET        /movies/movies.html                                             controllers.Assets.at(path="/public/html/movies", file="movies.html")
+GET        /movies/movieDetail.html                                        controllers.Assets.at(path="/public/html/movies", file="movieDetail.html")
+GET        /movies/movieTrailer.html                                       controllers.Assets.at(path="/public/html/movies", file="movieTrailer.html")
+GET        /movies/moviePlayerTest.html                                    controllers.Assets.at(path="/public/html/movies", file="moviePlayerTest.html")
+
+#Movies
+GET        /movies                                                     @controllers.Movies.returnNumMovieInDb(category:String)
+GET        /movies/pages                                               @controllers.Movies.returnMoviesByPage(category:String, pageNumber:String)
+
+GET        /movies/movieDetail                                             @controllers.Movies.findMovieByID(id:String, category:String)
+GET        /movies/movieTrailer                                            @controllers.Movies.returnTrailerURL(trailerURL:String)
+GET        /movies/FindSubs                                                @controllers.Movies.returnSubtitles(id:String)
+GET        /movies/movieInfo                                               @controllers.Movies.returnMovieInfo(id:String)
+
+#Player
+GET        /public/javascripts/video.js                                    controllers.Assets.at(path="/public/javascripts", file="video.js")
+GET        /public/stylesheets/video-js.css                                controllers.Assets.at(path="/public/stylesheets", file="video-js.css")
+GET        /public/fonts/vjs.eot                                           controllers.Assets.at(path="/public/fonts", file="vjs.eot")
+GET        /public/fonts/vjs.woff                                          controllers.Assets.at(path="/public/fonts", file="vjs.woff")
+GET        /public/fonts/vjs.ttf                                           controllers.Assets.at(path="/public/fonts", file="vjs.ttf")
+GET        /public/fonts/vjs.svg                                           controllers.Assets.at(path="/public/fonts", file="vjs.svg")
+GET        /public/swf/video-js.swf                                        controllers.Assets.at(path="/public/swf", file="video-js.swf")
+GET        /player/player.html                                             controllers.Assets.at(path="/public/html/player", file="player.html")
+GET        /movies/playMovie                                               @controllers.PlayMovie.loadMovie(movieId:String,subsLang:String ?="",captionLang:String ?="" )
+
+#Radios
+GET        /all                                                            @controllers.RadioDataReload.getAllRadioStations()
+
+GET        /music/music.html                                               controllers.Assets.at(path = "/public/html/movies", file = "music.html")
+
+GET        /music                                                          @controllers.GetRadiosFromDatabase.getRadiosFromDatabase(category : String)
